@@ -1,0 +1,45 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Tic Tac Toe</title>
+    </head>
+<body>
+
+<div id="container">
+    <div id="header">
+        <h1>Tic Tac Toe</h1>
+        <button type="button" class="btn" onclick="displayStart()">START</button>
+        <button type="button" class="btn reset" onclick="reset()">RESET</button>
+        
+        <div class="form-popup" id="getPlayerInfo">
+            <form class="form-container">
+              <h1>Insert Player Name</h1>
+              <label for="Player Name"></label>
+              <input type="text" placeholder="Player Name" required>       
+              <button type="submit" class="btn start" onclick="closeForm()">Let's go!</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Nevermind</button>
+            </form>
+          </div>
+          
+
+    </div>
+    <div id="board">
+        <div class="cell odd" id="1"></div>
+        <div class="cell even" id="2"></div>
+        <div class="cell odd" id="3"></div>
+        <div class="cell even" id="4"></div>
+        <div class="cell odd" id="5"></div>
+        <div class="cell even" id="6"></div>
+        <div class="cell odd" id="7"></div>
+        <div class="cell even" id="8"></div>
+        <div class="cell odd" id="9"></div>
+    </div>
+    <div><h2>Footer? Score</h2></div>
+</div>
+
+</body>
+<script src ="script.js"></script>  
+</html>

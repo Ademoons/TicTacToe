@@ -1,0 +1,139 @@
+body {
+    background-color: #292929;
+}
+
+#header {
+    text-align: center;
+
+}
+
+#container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    row-gap: 25px;
+}
+
+#board {
+    display: inline-grid;
+    grid-template-rows: 125px 125px 125px;
+    grid-template-columns: 125px 125px 125px;
+    grid-gap: 3px;
+
+}
+  
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, .3);
+    font-size: 3em;
+    
+}
+
+.cell.odd {
+    background-color: gainsboro;
+}
+
+.cell.even {
+    background-color: whitesmoke;
+}
+
+.cell:hover {
+    background-color: goldenrod;
+    box-shadow: 0 0 3px goldenrod, 0 0 3px goldenrod;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color:#04AA6D;
+    border: #04AA6D 10px;
+    border-radius: 12px;
+    height: 50px;
+    width: 150px;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+button.reset {
+    background-color: purple;
+}
+button.reset:hover {
+    opacity: 1;
+    box-shadow: 0 0 3px purple, 0 0 3px purple;   
+}
+
+button:hover {
+    opacity: 1;
+    box-shadow: 0 0 3px #04AA6D, 0 0 3px #04AA6D;   
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    border: 1px solid #616161;
+    z-index: 9;
+}
+  
+/* Add styles to the form container */
+.form-container {
+width: 350px;
+padding: 10px;
+background-color: #292929;
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+width: 80%;
+padding: 15px;
+margin: 5px 0 22px 0;
+border: none;
+background: gainsboro;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+background-color: #04AA6D;
+color: white;
+width: 35%;
+margin-bottom:10px;
+opacity: 0.8;
+}
+
+.form-container .cancel {
+background-color: red;
+width: 80%;
+}
+
+.form-container .start {
+width: 80%;
+background-color: #04AA6D;
+}
+
+.form-container .start:hover {
+box-shadow: 0 0 3px #04AA6D, 0 0 3px #04AA6D;   
+opacity: 1;
+}
+
+.form-container .cancel:hover {
+box-shadow: 0 0 3px red, 0 0 3px red;
+opacity: 1;   
+}
+
+p {
+    font-size: 26px;
+}
+
