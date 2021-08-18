@@ -15,13 +15,14 @@
         <button type="button" class="btn reset" onclick="reset()">RESET</button>
         
         <div class="form-popup" id="getPlayerInfo">
-            <form class="form-container">
-              <h1>Insert Player Name</h1>
+            <div class="form-container">
+              <h1>Insert Player Names</h1>
               <label for="Player Name"></label>
-              <input type="text" placeholder="Player Name" required>       
-              <button type="submit" class="btn start" onclick="closeForm()">Let's go!</button>
+              <input type="text" id="xPlayerName" placeholder="X Player Name i.e. 'Sempione'" required>       
+              <input type="text" id="oPlayerName" placeholder="O Player Name i.e. 'Arfonso'" required>       
+              <button type="submit" class="btn start" onclick="startNewGame()">Let's go!</button>
               <button type="button" class="btn cancel" onclick="closeForm()">Nevermind</button>
-            </form>
+            </div>
           </div>
           
 
@@ -37,7 +38,7 @@
         <div class="cell even" id="8"></div>
         <div class="cell odd" id="9"></div>
     </div>
-    <div><h2>Footer? Score</h2></div>
+    <div><h2 id="footerText"></h2></div>
 </div>
 
 </body>

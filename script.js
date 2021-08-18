@@ -1,73 +1,58 @@
+const playerFactory = (name, move, score) => {
+    return {name, move, score}
+  };
 
-//document.getElementById("board").addEventListener("click", function() {
-//document.getElementById("1").innerText = "O";
-//})
-
-// create player object but can't be called from console
-const playerFactory = (name) => {
-    const sayName = () => console.log(`Player name ${name}`)
-    return {sayName}
-  }
 
 
 // first loop for array, second for event listeners
 const gameBoardSetup = (() => {
     let gameBoard = [];
 
+    // generates array from gameboard grid
     for (let i = 1; i < 10; i++) {
         let temp = document.getElementById(i);
         gameBoard.push(temp);
-        console.log(gameBoard);
     }
 
+    // adds click listeners and contains game moves
     for (let i = 0; i < 9; i++) {
         gameBoard[i].addEventListener("click", function() {
             if (document.getElementById(i + 1).innerText == "X" ||
             document.getElementById(i + 1).innerText == "O") {
                 console.log('stop');
             } else if (document.getElementById(i + 1).innerText == "") {
-                document.getElementById(i + 1).innerText = "X";
+                let move = document.getElementById(i + 1).innerText = "O";
+                gameBoard.splice(i, 1, move);
+                console.log(gameBoard);
             }
             console.log("you clicked region number " + i);
+
+            // checks winner
+            gameBoard.forEach(move => { 
+                if (gameBoard[0] == move && gameBoard[1] == move && gameBoard[2] == move ||
+                    gameBoard[3] == move && gameBoard[4] == move && gameBoard[5] == move ||
+                    gameBoard[6] == move && gameBoard[7] == move && gameBoard[8] == move ||
+                    gameBoard[0] == move && gameBoard[3] == move && gameBoard[6] == move ||
+                    gameBoard[1] == move && gameBoard[4] == move && gameBoard[7] == move ||
+                    gameBoard[2] == move && gameBoard[5] == move && gameBoard[8] == move ||
+                    gameBoard[0] == move && gameBoard[4] == move && gameBoard[8] == move ||
+                    gameBoard[2] == move && gameBoard[4] == move && gameBoard[6] == move) {
+                        console.log('winner');
+                // no tie
+                }
+            })
         })
     }
 
     return {
         publicMethod: function() {
             console.log(gameBoard);
-       //     document.getElementById("board").addEventListener("click", function() {
-         //       document.getElementById("1").innerText = "X";
-           // })
         }
     }
 
 })();
 
 gameBoardSetup.publicMethod();
-
-/*    const one = document.getElementById("1");
-    gameBoard.push[0];
-    const two = document.getElementById("2");
-    const three = document.getElementById("3");
-    const four = document.getElementById("4");
-    const five = document.getElementById("5");
-    const six = document.getElementById("6");
-    const seven = document.getElementById("7");
-    const eight = document.getElementById("8");
-    const nine = document.getElementById("9");
-    return {
-        one,two,three,four,five,six,seven,eight,nine
-    }*/
-
-//module
-//displayController 
-
-
-//game
-
-//playSpot
-
-//checkWinner
 
 function displayStart() {
     document.getElementById("getPlayerInfo").style.display = "block";
@@ -76,6 +61,16 @@ function displayStart() {
 function closeForm() {
     document.getElementById("getPlayerInfo").style.display = "none";
   }
+  
+function startNewGame() {
+    const playerX = playerFactory(document.getElementById("xPlayerName").value, "X", 0);
+    const playerO = playerFactory(document.getElementById("oPlayerName").value, "O", 0);
+    console.log(playerX.name);
+    console.log(playerO.name);
+    document.getElementById("footerText").innerText = `${playerX.move} Player ${playerX.name}: ${playerX.score}
+    ${playerO.move} Player ${playerO.name}: ${playerO.score}`;
+    closeForm();  
+}
 
 function reset() {
     for (let i = 1; i < 10; i++) {
@@ -85,4 +80,5 @@ function reset() {
     closeForm();
 }
 
-
+const playerX = playerFactory('Sempione', "X", 0);
+const playerO = playerFactory('Arfonso', "O", 0);

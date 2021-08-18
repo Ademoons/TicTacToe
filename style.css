@@ -4,7 +4,10 @@ body {
 
 #header {
     text-align: center;
+}
 
+h2 {
+    text-align: center;
 }
 
 #container {
@@ -66,11 +69,11 @@ button {
 }
 
 button.reset {
-    background-color: purple;
+    background-color: goldenrod;
 }
 button.reset:hover {
     opacity: 1;
-    box-shadow: 0 0 3px purple, 0 0 3px purple;   
+    box-shadow: 0 0 3px goldenrod, 0 0 3px goldenrod;   
 }
 
 button:hover {
