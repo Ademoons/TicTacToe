@@ -11,23 +11,24 @@
 <div id="container">
     <div id="header">
         <h1>Tic Tac Toe</h1>
-        <button type="button" class="btn" onclick="displayStart()">START</button>
-        <button type="button" class="btn reset" onclick="reset()">RESET</button>
+        <button type="button" id="start" class="btn">Start Game</button>
+        <button type="button" id="reset" class="btn reset">Restart</button>
         
         <div class="form-popup" id="getPlayerInfo">
             <div class="form-container">
               <h1>Insert Player Names</h1>
               <label for="Player Name"></label>
-              <input type="text" id="xPlayerName" placeholder="X Player Name i.e. 'Sempione'" required>       
-              <input type="text" id="oPlayerName" placeholder="O Player Name i.e. 'Arfonso'" required>       
-              <button type="submit" class="btn start" onclick="startNewGame()">Let's go!</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Nevermind</button>
+              <input required type="text" id="xPlayerName" placeholder="X Player Name i.e. 'Sempione'" >       
+              <input required type="text" id="oPlayerName" placeholder="O Player Name i.e. 'Arfonso'" required>       
+              <button type="submit" id="gameStart" class="btn start">Let's go!</button>
+              <button type="button" id="cancel" class="btn cancel">Nevermind</button>
             </div>
           </div>
           
 
     </div>
     <div id="board">
+        
         <div class="cell odd" id="1"></div>
         <div class="cell even" id="2"></div>
         <div class="cell odd" id="3"></div>
@@ -37,8 +38,11 @@
         <div class="cell odd" id="7"></div>
         <div class="cell even" id="8"></div>
         <div class="cell odd" id="9"></div>
+                
     </div>
-    <div><h2 id="footerText"></h2></div>
+    <div id="footer">
+        <h2 id="footerText"></h2>
+    </div>
 </div>
 
 </body>
